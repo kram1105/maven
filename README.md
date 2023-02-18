@@ -68,3 +68,6 @@ deploy - copies the final package to the remote repository
 -P, --activate-profiles comma-delimited list of profiles to activate <br />
 -U, --update-snapshots forces a check for updated dependencies on remote repositories <br />
 -ff, --fail-fast stop at first failure 
+
+# jaxb project
+In this project maven jaxb2 plugin generates java classes using XML schema definition file i.e. .xsd file under resource folder.
