@@ -43,3 +43,31 @@ Private - hosted by companies for internal artifact
 Dependency - A dependency is an artifact which your Maven project depends upon. Typically a jar or pom. <br />
 Transitive Dependency - A dependency of an artifact which your project depends on. Can go many many layers deep. Cyclic dependencies are not supported. <br />
 Dependency Management - allows project authors to specify the versions of artifacts to be used.
+
+# Main Phases
+clean - delete target directory <br />
+validate - validate, if the project is correct <br />
+compile - compile source code, classes stored in target/classes <br />
+test - run tests <br />
+package - take the compiled code and package it in its distributable format e.g. JAR, WAR <br />
+verify - run any checks to verify the package is valid and meets quality criteria <br />
+install - install the package into the local repository <br />
+deploy - copies the final package to the remote repository
+
+# Useful Command line options
+-DskipTests=true compiles the tests, but skips running them <br />
+-Dmaven.test.skip=true skips compiling the tests and doesn't run them <br />
+-T - number of threads: <br />
+    -T 4 is a decent default <br />
+    -T 2C - 2 threads per CPU <br />
+-rf, --resume-from resume build from the specified project <br />
+-pl, --projects makes Maven build only specified modules and not the whole project <br />
+-am, --also-make makes Maven figure out what modules out target depends on and build them too <br />
+-o, --offline work offline <br />
+-X, --debug enable debug output <br />
+-P, --activate-profiles comma-delimited list of profiles to activate <br />
+-U, --update-snapshots forces a check for updated dependencies on remote repositories <br />
+-ff, --fail-fast stop at first failure 
+
+# jaxb project
+In this project maven jaxb2 plugin generates java classes using XML schema definition file i.e. .xsd file under resource folder.
